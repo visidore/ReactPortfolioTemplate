@@ -7,11 +7,13 @@ import { info } from "../info/Info";
 const links = [
     {
         name: 'Home',
+        type: 'initials',
         to: '/',
         active: 'home'
     },
     {
         name: 'About Me',
+        type: 'initials',
         to: '/about',
         active: 'about'
     },
