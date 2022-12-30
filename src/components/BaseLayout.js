@@ -15,7 +15,7 @@ export default function BaseLayout() {
    }
 
    return (
-      <Box className={darkMode ? Style.dark : Style.light}>
+      <Box className={darkMode ? Style.dark : Style.light} style={{ padding: '30px' }}>
          <Grid container display={'flex'} flexDirection={'column'} minHeight={'100vh'}
             justifyContent={'space-between'}>
             <Grid item>
@@ -25,7 +25,7 @@ export default function BaseLayout() {
                <Routes>
                   <Route exact path={'/'} element={<Home />} />
                   <Route exact path={'/about'} element={<About />} />
-                  <Route exact path={'/portfolio'} element={<Portfolio />} />
+                  <Route exact path={'/projects'} element={<Portfolio />} />
                </Routes>
             </Grid>
             <Grid item>

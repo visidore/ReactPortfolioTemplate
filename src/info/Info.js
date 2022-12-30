@@ -1,47 +1,29 @@
 import self from "../img/self.png"
 import mock1 from "../img/mock1.png"
 import mock2 from "../img/mock2.png"
-import mock3 from "../img/mock3.png"
-import mock4 from "../img/mock4.png"
-import mock5 from "../img/mock5.png"
 
-/* Hi there! Thanks for checking out my portfolio template. Be sure to read the comments to get a better understanding of
-how to make this template work best for you! */
+export let colors = ["rgb(207, 130, 22)", "rgb(188, 30, 146)"];
 
-export let colors = ["rgb(72, 78, 254)", "rgb(205, 24, 24)"];
-/*
-I highly recommend using a gradient generator like https://gradientgenerator.paytonpierce.dev/ to generate a pair of colors that you like.
-These colors will be used to style your name on the homepage, the background of your picture, and some other accents throughout
-the site.
- */
-
-
-/*
-So let's get started! Some of the info below is pretty self-explanatory, like 'firstName' and 'bio'. I'll try to explain anything
-that might not be obvious right off the bat :) I recommend looking at the template example live using "npm start" to get an idea
-of what each of the values mean.
- */
 
 export const info = {
     firstName: "Victorien",
     lastName: "Isidore",
-    initials: "js", // the example uses first and last, but feel free to use three or more if you like.
-    position: "a Backend Developer, learning frontend",
-    selfPortrait: self, // don't change this unless you want to name your self-portrait in the "img" folder something else!
-    gradient: `-webkit-linear-gradient(135deg, ${colors})`, // don't change this either
-    baseColor: colors[0],
-    miniBio: [ // these are just some "tidbits" about yourself. You can look at mine https://paytonjewell.github.io/#/ for an example if you'd like
+    position: "a Microservice Backend Developer",
+    selfPortrait: self,
+    gradient: `-webkit-linear-gradient(135deg, ${colors})`,
+    baseColor: colors[1],
+    miniBio: [
         {
-            emoji: '☕',
-            text: 'fueled by tea'
+            emoji: <a href="https://emoji.gg/emoji/java"><img src="https://cdn3.emoji.gg/emojis/java.png" width="32px" height="32px" alt="java"></img></a>,
+            text: 'Java and Tea lover'
         },
         {
             emoji: '🌎',
-            text: 'currently based in Canada'
+            text: 'Based in Montréal'
         },
         {
             emoji: "💼",
-            text: "consultant at the National Bank of Canada"
+            text: "Consultant for the national bank of Canada"
         },
         {
             emoji: "📧",
@@ -50,29 +32,26 @@ export const info = {
     ],
     socials: [
         {
-            link: "https://instagram.com",
+            link: "https://www.instagram.com/victorien_isidore/",
             icon: 'fa fa-instagram',
             label: 'instagram'
         },
         {
-            link: "https://github.com",
+            link: "https://github.com/visidore",
             icon: "fa fa-github",
             label: 'github'
         },
         {
-            link: "https://linkedin.com",
+            link: "https://www.linkedin.com/in/victorien-isidore-13b00b151/",
             icon: "fa fa-linkedin",
             label: 'linkedin'
-        },
-        // Feel free to remove any of these that you don't have. I'll write an FAQ on how to add new ones later, let me know if you have a request for an icon!
-        // Just change the links so that they lead to your social profiles.
-
+        }
     ],
     bio: "Hello! I'm John. I'm a systems engineer for Google. I studied CompSci at Harvard, I enjoy long walks on the beach, and I believe artificial intelligence will inevitably rule us all one day. You should hire me!",
     skills:
     {
-        proficientWith: ['javascript', 'react', 'git', 'github', 'bootstrap', 'html5', 'css3', 'figma'],
-        exposedTo: ['nodejs', 'python', 'adobe illustrator']
+        proficientWith: ['Java 17', 'SpringBoot 3', 'Git', 'Maven', 'API', 'Atlassian'],
+        exposedTo: ['Novelties of Java 17 not used at work', 'ReactJS']
     }
     ,
     hobbies: [
@@ -81,50 +60,41 @@ export const info = {
             emoji: '📖'
         },
         {
-            label: 'theater',
-            emoji: '🎭'
+            label: 'travelling',
+            emoji: '✈️'
         },
         {
-            label: 'movies',
-            emoji: '🎥'
+            label: 'photography',
+            emoji: '📸'
         },
         {
-            label: 'cooking',
-            emoji: '🌶'
+            label: 'scuba diving',
+            emoji: '🤿'
+        },
+        {
+            label: 'dancing',
+            emoji: '🕺'
+        },
+        {
+            label: 'games',
+            emoji: '♟'
         }
-        // Same as above, change the emojis to match / relate to your hobbies or interests.
-        // You can also remove the emojis if you'd like, I just think they look cute :P
+
+
+
     ],
-    portfolio: [ // This is where your portfolio projects will be detailed
+    portfolio: [
         {
-            title: "Project 1",
-            live: "https://paytonpierce.dev", //this should be a link to the live version of your project, think github pages, netlify, heroku, etc. Or your own domain, if you have it.
-            source: "https://github.com/paytonjewell", // this should be a link to the **repository** of the project, where the code is hosted.
+            title: "Learning react via this template",
+            live: "",
+            source: "https://github.com/paytonjewell/ReactPortfolioTemplate",
             image: mock1
         },
         {
-            title: "Project 2",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
+            title: "Next project in mind : creating a lab in Java to help people",
+            live: "",
+            source: "",
             image: mock2
-        },
-        {
-            title: "Project 3",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock3
-        },
-        {
-            title: "Project 4",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock4
-        },
-        {
-            title: "Project 5",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock5
         }
     ]
 }

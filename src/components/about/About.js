@@ -1,48 +1,54 @@
 import React from 'react';
 import Style from './About.module.scss';
 import Terminal from "./Terminal";
-import {Box} from "@mui/material";
-import {info} from "../../info/Info";
+import { Box } from "@mui/material";
+import { info } from "../../info/Info";
 
 
 export default function About() {
-    const firstName = info.firstName.toLowerCase()
+
+    let booksRed = ['The Complete Software Developer\'s Career Guide', 'Clean code'];
 
     function aboutMeText() {
         return <>
-            <p><span style={{color: info.baseColor}}>{firstName}{info.lastName.toLowerCase()} $</span> cat
-                about{firstName} </p>
-            <p><span style={{color: info.baseColor}}>about{firstName} <span
-                className={Style.green}>(main)</span> $ </span>
-                {info.bio}
+            <p >
+                Hello and welcome on my website! <br></br><br></br>
+                I'm a Software Engineer who loves to learn and face new challenges.
+                If you are passionated about tech like me feel free to send a message <br></br><br></br>
+                I'm not currently open for new opportunities
             </p>
         </>;
     }
 
     function skillsText() {
         return <>
-            <p><span style={{color: info.baseColor}}>{firstName}{info.lastName.toLowerCase()} $</span> cd skills/tools
-            </p>
-            <p><span style={{color: info.baseColor}}>skills/tools <span
-                className={Style.green}>(main)</span> $</span> ls</p>
-            <p style={{color: info.baseColor}}> Proficient With</p>
+            <p style={{ color: info.baseColor }}> Proficient With</p>
             <ul className={Style.skills}>
                 {info.skills.proficientWith.map((proficiency, index) => <li key={index}>{proficiency}</li>)}
             </ul>
-            <p style={{color: info.baseColor}}> Exposed To</p>
+            <p style={{ color: info.baseColor }}> Currently Improving</p>
             <ul className={Style.skills}>
                 {info.skills.exposedTo.map((skill, index) => <li key={index}>{skill}</li>)}
             </ul>
         </>;
     }
 
-    function miscText() {
+    function bookSection() {
         return <>
-            <p><span style={{color: info.baseColor}}>{firstName}{info.lastName.toLowerCase()} $</span> cd
-                hobbies/interests</p>
-            <p><span style={{color: info.baseColor}}>hobbies/interests <span
-                className={Style.green}>(main)</span> $</span> ls</p>
-            <ul>
+            <p style={{ color: info.baseColor }}> Books related to work red</p>
+            <ul className={Style.skills}>
+                {booksRed.map((book, index) => <li key={index}>{book}</li>)}
+            </ul>
+            <p style={{ color: info.baseColor }}> Currently reading </p>
+            <p>
+                Effective Java, third edition
+            </p>
+        </>;
+    }
+
+    function hobbies() {
+        return <>
+            <ul className={Style.skills}>
                 {info.hobbies.map((hobby, index) => (
                     <li key={index}><Box component={'span'} mr={'1rem'}>{hobby.emoji}</Box>{hobby.label}</li>
                 ))}
@@ -52,9 +58,10 @@ export default function About() {
 
     return (
         <Box display={'flex'} flexDirection={'column'} alignItems={'center'} mt={'3rem'}>
-            <Terminal text={aboutMeText()}/>
-            <Terminal text={skillsText()}/>
-            <Terminal text={miscText()}/>
+            <Terminal text={aboutMeText()} title="Presentation" />
+            <Terminal text={skillsText()} title="Skills" />
+            <Terminal text={bookSection()} title="Book section" />
+            <Terminal text={hobbies()} title="Hobbies" />
         </Box>
     )
 }

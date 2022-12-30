@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Style from './Navbar.module.scss';
-import Toggler from "./home/Toggler";
 import { Link, useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
 import { info } from "../info/Info";
@@ -19,9 +18,8 @@ const links = [
         active: 'about'
     },
     {
-        name: 'Portfolio',
-        type: 'initials',
-        to: '/portfolio',
+        name: 'Projects',
+        to: '/projects',
         active: 'portfolio'
     }
 ]
@@ -34,19 +32,16 @@ export default function Navbar({ darkMode, handleClick }) {
         <Box component={'nav'} width={'100%'}>
             <Box component={'ul'} display={'flex'} justifyContent={'center'} alignItems={'center'}
                 gap={{ xs: '2rem', md: '8rem' }}
-                textTransform={'lowercase'} fontSize={'1rem'}>
+                fontSize={'1rem'}>
                 {links.map((link, index) => (
                     <Box key={index} component={'li'} className={(link.active === active && !link.type) && Style.active}
                         sx={{ borderImageSource: info.gradient }}>
                         <Link to={link.to} onClick={() => setActive(link.active)}>
-                            {!link.type && <p style={{ paddingBottom: '0.5rem' }}>{link.name}</p>}
+                            {!link.type && <p style={{ paddingBottom: '0.5rem' }}><h1>{link.name}</h1></p>}
                             {link.type && <h1>{link.name}</h1>}
                         </Link>
                     </Box>
                 ))}
-                <li>
-                    <Toggler darkMode={darkMode} handleClick={handleClick} />
-                </li>
             </Box>
         </Box>
     )
